@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit Sale Order form: field + manual button + stat button -->
+    <record id="view_sale_order_form_manual_delivery" model="ir.ui.view">
+        <field name="name">sale.order.form.manual.delivery</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Make the technical flag available on the form (hidden) -->
+            <field name="state" position="after">
+                <field name="manual_delivery_allowed" invisible="1"/>
+                <field name="picking_ids" invisible="1"/>
+            </field>
+
+            <!-- Add "Create Delivery" button after the Cancel button -->
+           <xpath expr="//header/button[@name='action_cancel']" position="after">
+                <button name="create_delivery_note_manually"
+                        string="Create Delivery"
+                        type="object"
+                        class="btn-primary"
+                        attrs="{'invisible': [
+                            '|',
+                            ('state', 'not in', ['sale','done']),
+                            ('manual_delivery_allowed', '=', False)
+                        ]}"/>
+            </xpath>
+
+            
+
+        </field>
+    </record>
+
+    
+</odoo>
