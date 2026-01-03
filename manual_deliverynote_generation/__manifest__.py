@@ -2,7 +2,7 @@
     'name': 'Manual Delivery Note',
     'version': '15.0.1.0.0',
     'summary': 'Create and manage manual delivery notes from Sales Orders',
-    'description_html': """
+    'description': """
 <div class="oe_structure">
     <div class="oe_title">
         <i class="fa fa-truck"></i>
