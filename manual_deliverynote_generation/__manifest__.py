@@ -2,7 +2,7 @@
     'name': 'Manual Delivery Note',
     'version': '15.0.1.0.0',
     'summary': 'Create and manage manual delivery notes from Sales Orders',
-    'description': """
+    'description_html': """
 <div class="oe_container">
     <section class="oe_row oe_spaced">
         <h2 class="oe_slogan">
@@ -77,7 +77,7 @@
         'views/sale_order_views.xml',
     ],
     'images': [
-        'static/description/banner.png',
+        'static/description/banner.jpg',
         'static/description/icon.png',
     ],
     'installable': True,
